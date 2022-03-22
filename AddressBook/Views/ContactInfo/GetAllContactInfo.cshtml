@@ -1,0 +1,54 @@
+﻿
+@model IEnumerable<AddressBook.Responses.ContactInfoResponse> 
+
+@{
+    ViewBag.Title = "GetAllContactInfo";
+}
+
+<h2>All Contacts</h2>
+<link rel="stylesheet" href="~/Style/Style.css"/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+            <th>Physical Address</th>
+        </tr>
+    </thead>
+    <tbody class="tbody">
+        @if (Model.ToList().Count == 0)
+        {
+            <tr>
+                <th>
+                    <h3>No contacts found. Please add a new contact.</h3>
+                </th>
+            </tr>
+        } 
+        else 
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(rec => item.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(rec => item.EmailAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(rec => item.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(rec => item.PhysicalAddress)
+                    </td>
+                    <td class="button-row">
+                        @Html.ActionLink("Details", "Details", "ContactInfo", new { Id = item.Id }, htmlAttributes: new { @class = "info" })
+                        @Html.ActionLink("Edit", "Edit", "ContactInfo", new { Id = item.Id }, htmlAttributes: new {@class = "warning" })
+                        @Html.ActionLink("Delete", "Delete", "ContactInfo", new { Id = item.Id }, htmlAttributes: new { @class = "danger", onclick="return confirm('Are you sure?');" })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

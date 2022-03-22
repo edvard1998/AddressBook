@@ -1,0 +1,75 @@
+﻿@model AddressBook.Requests.ContactInfoRequest
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<link rel="stylesheet" href="~/Style/Style.css" />
+
+@using (Html.BeginForm("Create", "ContactInfo", FormMethod.Post, new { @id = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label for="FullName" class="control-label col-md-2">Full Name<rt style="color: red">*</rt></label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Please enter full name..." } })
+                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger", @id = "fName" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="EmailAddress" class="control-label col-md-2">Email Address<rt style="color: red">*</rt></label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "Please enter email address..." } })
+                @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger", @id = "eAddress" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="PhoneNumber" class="control-label col-md-2">Phone Number<rt style="color: red">*</rt></label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "Please enter phone number..." } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger", @id = "pNumber" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="PhysicalAddress" class="control-label col-md-2">Physical Address</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PhysicalAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "Please enter physical address..." } })
+                @Html.ValidationMessageFor(model => model.PhysicalAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "GetAllContactInfo", "", htmlAttributes: new {@class = "back", onclick = "return confirm('Are you sure?')"})
+</div>
+
+<script src="~/Validation/Validation.js"></script>
+
+<script>
+    let form = document.getElementById("form");
+
+    form.onsubmit = function () {
+        return isValid();
+    }
+
+    form.onkeyup = function (event) {
+        return keyUp(event);
+    }
+</script>
+

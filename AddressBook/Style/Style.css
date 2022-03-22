@@ -1,0 +1,120 @@
+﻿.info {
+    width: 85px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    background-color: #0c7ddec7;
+    padding: 8px;
+    border-radius: 10%;
+    margin: 5px;
+}
+
+    .info:hover {
+        background-color: #337ab7;
+        color: #fff;
+        text-decoration: none;
+    }
+
+.warning {
+    width: 85px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    background-color: #e4aa0dc4;
+    padding: 8px;
+    border-radius: 10%;
+    margin: 5px;
+}
+
+    .warning:hover {
+        background-color: #e4990de8;
+        color: #fff;
+        text-decoration: none;
+    }
+
+.danger {
+    width: 85px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    background-color: #b73333eb;
+    padding: 8px;
+    border-radius: 10%;
+    margin: 5px;
+}
+
+    .danger:hover {
+        background-color: #be2727;
+        color: #fff;
+        text-decoration: none;
+    }
+
+.primary {
+    width: 100px;      
+    display: block;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;
+    padding: 8px;
+    border-radius: 10%;
+    margin: 5px;
+}
+
+    .primary:hover {
+        background-color: #337ab7b5;
+        color: #fff;
+        text-decoration: none;
+    }
+
+.back {
+    width: 100px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    background-color: #31aeaabd;
+    padding: 8px;
+    border-radius: 10%;
+    margin: 5px;
+}
+
+    .back:hover {
+        background-color: #33b7b3;
+        color: #fff;
+        text-decoration: none;
+    }
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.rt {
+    color: red;
+}
+
+.block {
+    width: auto;
+    display: flex;
+    justify-content: end;
+    margin: 15px;
+}
+
+.add_new_contact {
+    width: auto;
+    display: block;
+    text-align: center;
+    background-color: #3cbf35c4;
+    color: #fff;
+    padding: 8px;
+    border-radius: 10%;
+}
+    .add_new_contact:hover {
+        background-color: #3cbf35;
+        text-decoration: none;
+        color: #fff;
+    }
